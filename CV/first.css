@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    text-align: center;
 }
 body{
     margin-top: 2%;
@@ -48,4 +49,15 @@ body{
 }
 #sub{
     text-align: center;
+}
+.contact{
+    color:blanchedalmond
+}
+#contact{
+    text-decoration: underline;
+    margin-bottom: 10%;
+}
+#contact-info{
+    padding: 2%;
+    overflow:hidden;
 }
