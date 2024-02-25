@@ -3,7 +3,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    text-align: center;
+    
 }
 body{
     margin-top: 2%;
@@ -13,34 +13,38 @@ body{
     align-items:space-around;
     justify-content: space-around;
 }
-#left-section{
+.left-section{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-left: 10%;
     height:100%;
-    width:25%;
+    width:30%;
     background-image: linear-gradient(to right,#1f0d31,#963df5);
 }
-#right-section{
+.right-section{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-right: 10%;
     height:100%;
-    width:75%;
+    width:70%;
     background-color:azure;
 }
-#left-div{
+/* .left-div{
     flex-direction: column;
 }
-#right-div{
+.right-div{
     flex-direction: column;
-}
+} */
 #profile-pic{
-    scale: 0.7;
-    width:100%;
+    scale: 1.0;
+    width:50%;
     height:auto;
     overflow:hidden;
+    margin: 10%;
     border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #name{
     margin: 3%;
@@ -51,13 +55,52 @@ body{
     text-align: center;
 }
 .contact{
-    color:blanchedalmond
+    color:blanchedalmond;
+    list-style-position: inside;
+    text-align:left;
+    padding-left: 4%;
 }
 #contact{
+    color:blanchedalmond;
     text-decoration: underline;
-    margin-bottom: 10%;
+    margin-bottom: 7%;
+    text-align: center;
 }
 #contact-info{
     padding: 2%;
     overflow:hidden;
+}
+.skills{
+    color:blanchedalmond;
+    text-align: left;
+    list-style-position: inside;
+    padding-left: 8%;
+}
+#skillset-heading{
+    color:blanchedalmond;
+    text-decoration: underline;
+    margin: 10% 5% 7% 0;
+    text-align: center;
+}
+.info{
+    text-align: justify;
+    padding: 5% 2% 2% 1%;
+}
+.education{
+    padding: 1% 0 1% 2%;
+}
+#education-list{
+    padding: 1% 1% 0 1%;
+    list-style-position: inside;
+}
+.education-detail{
+    padding: 0 1% 0.5% 3%;
+}
+.projects{
+    text-align: justify;
+    padding: 1% 0 2% 2%;
+}
+#projects-list{
+    padding: 1% 2% 3% 2%;
+    list-style-position: inside;
 }

@@ -7,20 +7,84 @@
 </head>
 <link rel="stylesheet" href="first.css">
 <body>
-    <section id=left-section>
-        <div id="left-div">
+    <section class=left-section>
+        <div class="left-div">
             <img id = profile-pic src="media/sample-profile.jpg" alt="Profile-Picutre">
-            <h2 id = contact class =contact>Contact</h2>
-            <p class=contact id = contact-info>ahsanazhar31@gmail.com <br>
-            +923214121734</p>
-            
+            <h2 id = contact>Contact</h2>
+            <ul class = contact>
+                <li class = contact>ahsanazhar31@gmail.com</li>
+                <li class = contact>+923214121734</li>
+            </ul>
+        <div class="skills">
+            <h3 id="skillset-heading">Skillset/Technologies</h3>
+            <ul>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Flutter</li>
+                <li>Python</li>
+                <li>C</li>
+            </ul>
+        </div> 
         </div>
     </section>
-    <section id=right-section>
+    <section class=right-section>
         <div class="right-div">
             <h1 id = name>Ahsan Azhar</h1>
             <h3 id=sub>Computer Science Student <br>
                 Full Stack Developer</h3>
+            <div class=info>
+                <h3 style="text-decoration: underline; padding-left: 1%;">
+                    About Me
+                </h3>
+                <p style="padding-left: 1%;">Dedicated and Hardworking Computer Science Student with excellent
+                    grades in Computer Science major courses aspiring to be a professional
+                    in fields of Artificial Intelligence and web development.
+                </p>
+            </div>
+            <div class="education">
+                <h3 style="text-decoration: underline;">
+                    Education
+                </h3>
+                <ul id="education-list">
+                    <li>Higher Education
+                        <ul class="education-detail">
+                            <li>Comsats Institute of information Technology (2021-Present) <br>
+                            <p style="font-weight: bold;padding: 0 0 0 4%;">CGPA: 3.57</p></li>
+                        </ul>
+                    </li>
+                    <li>Intermediate
+                        <ul class="education-detail">
+                            <li>
+                                Unique College (2019-2021) <br>
+                            <p style="font-weight: bold;padding: 0 0 0 4%;">Marks: 84%</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="projects">
+                <h3 style="text-decoration: underline;">
+                    Experience and Projects
+                </h3>
+                <ul id="projects-list">
+                    <li>
+                        Developed a fully working Mobile Apllication as part of a
+                        semester project for mobile application development course, including
+                        firebase api technologies in Flutter
+                    </li>
+                    <li style="padding: 1% 0 1% 0">
+                        Succeeded in developing a Java e-commerce store application with Xampp 
+                        Database and JavaFX Front-end as part of Semester Project for
+                        Object-Oritented-Programming
+                    </li>
+                    <li>
+                        Developed a simple "Hangman" inpired game as a small project for Data 
+                        Structures and Algorithms Course
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </body>
