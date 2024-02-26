@@ -3,7 +3,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    
+    font-family:Arial;
 }
 body{
     margin-top: 2%;
@@ -19,7 +19,7 @@ body{
     margin-left: 10%;
     height:100%;
     width:30%;
-    background-image: linear-gradient(to right,#1f0d31,#963df5);
+    background-color: #012E40;
 }
 .right-section{
     border-top-right-radius: 15px;
@@ -27,7 +27,7 @@ body{
     margin-right: 10%;
     height:100%;
     width:70%;
-    background-color:azure;
+    background-color:#b5e5bf;
 }
 /* .left-div{
     flex-direction: column;
@@ -35,16 +35,43 @@ body{
 .right-div{
     flex-direction: column;
 } */
+@keyframes picture-border {
+    0%   {background: linear-gradient(white, white) padding-box,
+        linear-gradient(0deg,blue, darkorchid) border-box;}
+    12.5%   {background: linear-gradient(white, white) padding-box,
+        linear-gradient(45deg,blue, darkorchid) border-box;}
+    25%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(90deg,blue, darkorchid) border-box;}
+    37.5%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg,blue, darkorchid) border-box;}
+    50%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(180deg,blue, darkorchid) border-box;}
+    62.5%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(225deg,blue, darkorchid) border-box;}
+    75%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(270deg,blue, darkorchid) border-box;}
+    87.5%  {background: linear-gradient(white, white) padding-box,
+        linear-gradient(315deg,blue, darkorchid) border-box;}
+    100% {background: linear-gradient(white, white) padding-box,
+        linear-gradient(360deg,blue, darkorchid) border-box;}
+  }
 #profile-pic{
     scale: 1.0;
-    width:50%;
+    width:60%;
     height:auto;
     overflow:hidden;
     margin: 10%;
+    animation-name: picture-border;
+    animation-duration: 4s ;
+    animation-iteration-count: infinite;
+    border: 7px solid transparent;
     border-radius: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+#profile-pic:hover{
+    width:100%;
 }
 #name{
     margin: 3%;
@@ -61,7 +88,7 @@ body{
     padding-left: 4%;
 }
 #contact{
-    color:blanchedalmond;
+    color:#F28705;
     text-decoration: underline;
     margin-bottom: 7%;
     text-align: center;
@@ -77,7 +104,7 @@ body{
     padding-left: 8%;
 }
 #skillset-heading{
-    color:blanchedalmond;
+    color:#F28705;
     text-decoration: underline;
     margin: 10% 5% 7% 0;
     text-align: center;
@@ -85,6 +112,14 @@ body{
 .info{
     text-align: justify;
     padding: 5% 2% 2% 1%;
+}
+#info-heading{
+    padding-left:1%;
+    color:#ff3300;
+}
+#education-heading{
+    text-decoration:solid;
+    color:#ff3300;
 }
 .education{
     padding: 1% 0 1% 2%;
@@ -96,11 +131,14 @@ body{
 .education-detail{
     padding: 0 1% 0.5% 3%;
 }
+#projects-heading{
+    color: #ff3300;
+}
 .projects{
     text-align: justify;
     padding: 1% 0 2% 2%;
 }
 #projects-list{
-    padding: 1% 2% 3% 2%;
+    padding: 1% 2% 3% 1%;
     list-style-position: inside;
 }
