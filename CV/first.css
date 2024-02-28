@@ -7,53 +7,39 @@
 }
 body{
     margin-top: 2%;
-    height:50em;
+    margin-bottom: 2%;
+    height:100vh;
     background-color: darkgray;
     display:flex;
     align-items:space-around;
     justify-content: space-around;
 }
 .left-section{
+    color:rgba(255, 255, 255, 0.9);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-left: 10%;
     height:100%;
     width:30%;
-    background-color: #012E40;
+    background-color: #070F2B;
 }
 .right-section{
+    color:rgba(255, 255, 255, 0.9);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-right: 10%;
     height:100%;
     width:70%;
-    background-color:#b5e5bf;
+    background-color:#232D3F;
 }
-/* .left-div{
+/*.left-div{
     flex-direction: column;
 }
 .right-div{
     flex-direction: column;
-} */
+}*/ 
 @keyframes picture-border {
-    0%   {background: linear-gradient(white, white) padding-box,
-        linear-gradient(0deg,blue, darkorchid) border-box;}
-    12.5%   {background: linear-gradient(white, white) padding-box,
-        linear-gradient(45deg,blue, darkorchid) border-box;}
-    25%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(90deg,blue, darkorchid) border-box;}
-    37.5%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(135deg,blue, darkorchid) border-box;}
-    50%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(180deg,blue, darkorchid) border-box;}
-    62.5%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(225deg,blue, darkorchid) border-box;}
-    75%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(270deg,blue, darkorchid) border-box;}
-    87.5%  {background: linear-gradient(white, white) padding-box,
-        linear-gradient(315deg,blue, darkorchid) border-box;}
-    100% {background: linear-gradient(white, white) padding-box,
-        linear-gradient(360deg,blue, darkorchid) border-box;}
+    
   }
 #profile-pic{
     scale: 1.0;
@@ -64,15 +50,15 @@ body{
     animation-name: picture-border;
     animation-duration: 4s ;
     animation-iteration-count: infinite;
-    border: 7px solid transparent;
+    border: 5px solid black;
     border-radius: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: all 0.4s ease-in;
 }
 #profile-pic:hover{
-    width:110%;
-    margin-left:-5%;
+  transform: scale(1.5);
 }
 #name{
     margin: 3%;
@@ -83,14 +69,13 @@ body{
     text-align: center;
 }
 .contact{
-    color:blanchedalmond;
     list-style-position: inside;
     text-align:left;
     padding-left: 4%;
 }
 #contact{
-    color:#F28705;
-    text-decoration: underline;
+    border-bottom:2px solid darkgrey;
+    color:darkgrey;
     margin-bottom: 7%;
     text-align: center;
 }
@@ -99,15 +84,14 @@ body{
     overflow:hidden;
 }
 .skills{
-    color:blanchedalmond;
     text-align: left;
     list-style-position: inside;
     padding-left: 8%;
 }
 #skillset-heading{
-    color:#F28705;
-    text-decoration: underline;
-    margin: 10% 5% 7% 0;
+    border-bottom:2px solid darkgrey;
+    color:darkgrey;
+    margin-top:10%;
     text-align: center;
 }
 .info{
@@ -116,11 +100,11 @@ body{
 }
 #info-heading{
     padding-left:1%;
-    color:#ff3300;
+    color:darkgrey;
 }
 #education-heading{
     text-decoration:solid;
-    color:#ff3300;
+    color:darkgrey;
 }
 .education{
     padding: 1% 0 1% 2%;
@@ -133,7 +117,7 @@ body{
     padding: 0 1% 0.5% 3%;
 }
 #projects-heading{
-    color: #ff3300;
+    color: darkgrey;
 }
 .projects{
     text-align: justify;
