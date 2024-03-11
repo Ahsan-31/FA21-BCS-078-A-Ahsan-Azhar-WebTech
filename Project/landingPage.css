@@ -18,3 +18,23 @@
     background-position: center;
     background-size: cover;
 }
+
+.landing-button{
+    color:white;
+    height:45px;
+    width:15%;
+    text-shadow: 2px 2px 5px grey;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px grey;
+    border: 2px solid rgb(35, 35, 35);
+    margin: 1%;
+    transition: all 0.1s ease-in;
+}
+.landing-button:hover{
+    transform: scale(1.1);
+    background-color: black;
+}
+#gpu-icon{
+    scale: 0.1;
+}
