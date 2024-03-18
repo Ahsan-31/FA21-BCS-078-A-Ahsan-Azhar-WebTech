@@ -2,3 +2,8 @@
     box-sizing: border-box;
 }
 
+.action-buttons{
+    width: 70px;
+    height: 35px;
+    margin-bottom: 2%;
+}
