@@ -8,8 +8,24 @@
 }
 
 #nav-logo{
-    width:10%;
-    
+    width:25%;
+}
+
+#cart-icon{
+    width:20%;
+    margin-left: 60%;
+}
+#cart-icon:hover{
+    transform: scale(1.2);
+}
+
+#navbarNav{
+    align-items: center;
+    text-align: center;
+}
+.nav-logo-a{
+    margin-left: 2%;
+    max-width: 34%;
 }
 
 #hero{
