@@ -25,7 +25,7 @@ function deleteStory() {
       url: "https://usmanlive.com/wp-json/api/stories/" + elementID,
       method: "DELETE",
       success: function () {
-        fetchStories(); // Refresh the list after deleting a story
+        fetchStories();
       },
       error: function (error) {
         console.log("Error deleting story:", error);
