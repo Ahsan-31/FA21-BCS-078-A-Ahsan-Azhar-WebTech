@@ -11,7 +11,21 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-sm-12">
-                <div class="table-responsive">
+                <section class="form-section">
+                    <form id="Form">
+                        <div class="form-group">
+                            <label for="Title">Title:</label>
+                            <input type="text" class="form-control" id="Title" placeholder="Enter Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="Content">Content:</label>
+                            <textarea class="form-control" id="Content" placeholder="New Story Content"></textarea>
+                        </div>
+                        <button id="createBtn" type="submit" class="btn btn-primary">Create</button>
+                        <button id="clearBtn" type="submit" class="btn btn-primary" style="display: none;">Clear</button>
+                    </form>
+                </section>
+                <div class="table-responsive mp-3">
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
@@ -30,7 +44,6 @@
                         </tbody>
                     </table>
                 </div>
-                
             </div>
         </div>
     </div>
