@@ -46,6 +46,9 @@
                   <img id="cart-icon" src="icons/cart-icon.png" alt="Logo">
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/Project/contact-us.html">Contact-Us</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -54,21 +57,22 @@
         <div id="form" class="mx-auto">
             <h1 class="text-center">Contact Us</h1>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
             </div>
-            <div class="row g-3 mb-3" >
+            <div class="row g-3 mb-3">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="firstName">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lastName">
                 </div>
-              </div>
+            </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
             </div>
+            <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>            
         </div>    
       </section>
     
