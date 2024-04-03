@@ -1,16 +1,16 @@
-const menuItem = document.getElementById('menu');
-  const hoverImage = document.getElementById('IranImg');
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll("#newsLinks img");
+    const menu = document.getElementById("menu");
 
-  // Add event listener to the image for mouseover
-  hoverImage.addEventListener('mouseover', function() {
-    // Get the image name from the alt attribute
-    const imageName = this.alt;
-    // Update the menu item text with the image name
-    menuItem.html = imageName;
-  });
+    images.forEach(image => {
+        image.addEventListener("mouseover", function() {
+            const imageName = this.alt;
+            menu.innerHTML = imageName;
+        });
 
-  // Add event listener to the image for mouseout (optional)
-  hoverImage.addEventListener('mouseout', function() {
-    // Reset the menu item text
-    menuItem.html = 'Menu';
-  });
+        // Optional: Reset the menu text when mouse leaves the image
+        image.addEventListener("mouseout", function() {
+            menu.innerHTML = "Menu";
+        });
+    });
+});
