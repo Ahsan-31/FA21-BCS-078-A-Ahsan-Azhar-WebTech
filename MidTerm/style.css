@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+#navbar{
+    display:flex;
+    margin-top:2.5%;
+}
+.navItems{
+    border-right: 1px solid black;
+    margin-right: 15px;
+    padding-right:15px;
+}
+.navItems:hover{
+    text-decoration: underline;
+    color:midnightblue;
+}
+#navButton{
+    margin-left: 30%;
+    border-radius: 20px;
+    background-color:midnightblue;
+    color: white;
+    margin-right: 2%;
+}
+#newsLinks{
+    border-bottom: 1px solid black;
+}
+#IranNews{
+    margin-right:-5%;   
+}
+#Iranimg{
+   width:90%; 
+}
+#stealthAttack{
+    margin-right:4%
+}
