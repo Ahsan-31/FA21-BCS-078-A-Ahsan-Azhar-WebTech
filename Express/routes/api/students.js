@@ -26,11 +26,11 @@ router.get("/api/students/:id", async function (req, res) {
   res.send(student);
 });
 router.get("/api/students", async function (req, res) {
-  let students = await Student.find();
-  //   let students = [
-  //     { name: "Abdul Rehman", address: "Hafiz Abad" },
-  //     { name: "Azeem", address: "Pak Arab" },
-  //   ];
+  
+    let students = [
+      { name: "Abdul Rehman", address: "Hafiz Abad" },
+      { name: "Azeem", address: "Pak Arab" },
+    ];
   res.send(students);
 });
 

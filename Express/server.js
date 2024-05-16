@@ -12,21 +12,23 @@ server.use(express.static("public"));
 
 let studentsAPIRouter = require("./routes/api/students");
 server.use(studentsAPIRouter);
+let mainRouter = require("./routes/router");
+server.use(mainRouter);
 
 server.get("/contact-us", async (req, res) => {
   res.render("contact-us");
 });
 
-server.get("/", async (req, res) => {
-  res.render("homepage");
-  // res.send("Hello Class A section");
-});
+// server.get("/", async (req, res) => {
+//   res.render("homepage");
+//   // res.send("Hello Class A section");
+// });
 
 server.listen(4000, () => {
   console.log("server started listening at localhost:4000");
 });
 mongoose
-  .connect("mongodb://localhost:27017/fa21-bcs-a")
+  .connect("mongodb://localhost:27017/products")
   .then(() => {
     console.log("DB Connected");
   })

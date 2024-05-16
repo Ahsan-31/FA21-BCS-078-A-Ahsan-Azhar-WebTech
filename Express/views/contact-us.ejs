@@ -1,1 +1,27 @@
-<h1>Contact Us</h1>
+<link rel="stylesheet" href="styles/contact-us.css">
+<section id="hero" class="min-vh-100 d-flex align-items-center">
+    <div id="form" class="mx-auto">
+        <h1 class="text-center">Contact Us</h1>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="row g-3 mb-3">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="firstName">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lastName">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>            
+    </div>    
+  </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="js/contact-us.js"></script>

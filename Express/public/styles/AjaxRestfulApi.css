@@ -7,12 +7,7 @@
     height: 35px;
     margin-bottom: 2%;
 }
-#hero{
-    background: linear-gradient(rgba(0, 0, 0, 0.507),rgba(0, 0, 0, 0.438)) ,url(./images/1200x675.jpg);
-    color:white;
-    background-position: center;
-    background-size: cover;
-}
+
 .form-control{
     background-color: rgba(255, 0, 0, 0);
     color: white;
@@ -21,6 +16,17 @@
 .form-control::placeholder{
     color: white
 }
+.form-control:focus{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+}
+
 .form-section{
     margin: 2% 0 1% 0;
+}
+tr{
+    background-color: black;
+}
+.table{
+    background-color: black;
 }

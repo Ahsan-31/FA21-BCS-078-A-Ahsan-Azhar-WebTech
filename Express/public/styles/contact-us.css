@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+#form{
+    align-items: center;
+    color: white;
+    width: 50%;
+}
+
+.form-control{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+}
+
+.form-control::placeholder{
+    color: white
+}
