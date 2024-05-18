@@ -15,3 +15,7 @@
 .form-control::placeholder{
     color: white
 }
+.form-control:focus{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+}

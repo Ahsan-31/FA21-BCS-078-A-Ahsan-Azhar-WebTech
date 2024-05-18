@@ -1,40 +1,6 @@
 *{
     box-sizing: border-box;
 }
-
-#nav-bar{
-    background: linear-gradient(to right,rgb(84, 25, 43),rgb(14, 32, 78));
-    color: white;
-}
-
-#nav-logo{
-    width:25%;
-}
-
-#cart-icon{
-    width:20%;
-    margin-left: 60%;
-}
-#cart-icon:hover{
-    transform: scale(1.2);
-}
-
-#navbarNav{
-    align-items: center;
-    text-align: center;
-}
-.nav-logo-a{
-    margin-left: 2%;
-    max-width: 34%;
-}
-
-#hero{
-    background: linear-gradient(rgba(0, 0, 0, 0.507),rgba(0, 0, 0, 0.438)) ,url(../images/1200x675.jpg);
-    color:white;
-    background-position: center;
-    background-size: cover;
-}
-
 .landing-button{
     color:white;
     height:45px;
@@ -51,6 +17,49 @@
     transform: scale(1.1);
     background-color: black;
 }
-#gpu-icon{
-    scale: 0.1;
+#showCaseHeading{
+    margin-top: 2%;
+    text-align: center;
+}
+#showCase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+    gap: 10px;
+}
+
+.showCaseProd {
+    width: 330px;
+    border: 2px solid black;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 3%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 6px black;
+}
+.showCaseProd:hover{
+    box-shadow: 4px 4px 12px black;
+}
+.showCaseProdImg {
+    width: 100%;
+    border: 1px solid red;
+    transition: all 0.2s ease-in;
+}
+.showCaseProdImg:hover{
+    transform: scale(1.1);
+}
+.showCaseProdTitle {
+    border: 2px solid blue;
+    width: 100%;
+    text-align: center;
+}
+
+.showCaseProdPrice {
+    width: 100%;
+    text-align: center;
 }
