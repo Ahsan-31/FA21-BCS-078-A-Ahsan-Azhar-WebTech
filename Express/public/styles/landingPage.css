@@ -30,7 +30,7 @@
 }
 
 .showCaseProd {
-    width: 330px;
+    width: 300px;
     border: 2px solid black;
     margin-left: 15px;
     margin-right: 15px;
@@ -47,19 +47,16 @@
 }
 .showCaseProdImg {
     width: 100%;
-    border: 1px solid red;
     transition: all 0.2s ease-in;
 }
 .showCaseProdImg:hover{
     transform: scale(1.1);
 }
 .showCaseProdTitle {
-    border: 2px solid blue;
-    width: 100%;
+    margin-top: 10px;
     text-align: center;
 }
 
 .showCaseProdPrice {
-    width: 100%;
     text-align: center;
 }
