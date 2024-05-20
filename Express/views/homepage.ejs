@@ -5,51 +5,21 @@
       <h3>Your ultimate destination for gaming hardware excellence!</h3>
       <br>
       <div>
-        <button class="landing-button">Browse Items</button>
-        <button class="landing-button">Search</button>
+        <a href="/productsPage"><button class="landing-button">Browse Products</button></a>
+        <a href="#search"><button class="landing-button">Search</button></a>
       </div>
     </div>
 </section>
 <h1 id="showCaseHeading">Popular Items:</h1>
 <div id = "showCase">
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
-  <div class="showCaseProd">
-    <img class="showCaseProdImg" src="products/GPUs/RTX 3060.png" alt="">
-    <h5 class="showCaseProdTitle">Nvidia Gefore RTX 3060</h5>
-    <p class="showCaseProdPrice">RS: 90,000</p>
-  </div>
+  <% for( let index = 0; index < product.length; index++ ) { %>
+    <a class="prodLink" href="/productDetails<%= product[index].id %>">
+        <div class="showCaseProd">
+            <img class="showCaseProdImg" src="<%= product[index].img %>" alt="">
+            <h5 class="showCaseProdTitle"><%=product[index].title %></h5>
+            <p class="showCaseProdPrice"><%=product[index].price %></p>
+        </div>
+    </a>
+  <% } %>
+  <a id="viewMore" href="/productsPage"><h4>View More ></h4></a></div>
 </div>

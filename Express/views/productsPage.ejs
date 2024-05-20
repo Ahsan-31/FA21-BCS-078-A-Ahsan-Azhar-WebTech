@@ -1,12 +1,16 @@
 <link rel="stylesheet" href="styles/productsPage.css">
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col products">
-            <div class="product">
-                <img class="productImg" src="products/GPUs/RTX 3060.png" alt="">
-                <h5 class="productTitle"><%=product.title %></h5>
-                <p class="productPrice"><%=product.price %></p>
-            </div>
+            <% for( let index = 0; index < product.length; index++ ) { %>
+                <a class="prodLink" href="/productDetails<%= product[index].id %>">
+                    <div class="product">
+                        <img class="productImg" src="<%= product[index].img %>" alt="">
+                        <h5 class="productTitle"><%=product[index].title %></h5>
+                        <p class="productPrice"><%=product[index].price %></p>
+                    </div>
+                </a>
+            <% } %>
         </div>
     </div>
 </div>
