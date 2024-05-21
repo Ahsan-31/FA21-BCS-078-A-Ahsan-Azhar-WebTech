@@ -13,7 +13,7 @@ body{
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 20px;
-    box-shadow: 3px 3px 6px white;
+    box-shadow: 6px 6px 10px red;
 }
 .prodImg{
     padding: 20px;
@@ -28,7 +28,7 @@ body{
 .purchaseButtons{
     margin-top: 20px;
 }
-.buyNow{
+#buyNow{
     padding: 3px;
     padding-left: 20px;
     padding-right: 20px;
@@ -38,10 +38,10 @@ body{
     color: grey;
     transition: all 0.1s ease-in;
 }
-.buyNow:hover{
+#buyNow:hover{
     transform: scale(1.1);
 }
-.addToCart{
+#addToCart{
     padding: 3px;
     padding-left: 20px;
     padding-right: 20px;

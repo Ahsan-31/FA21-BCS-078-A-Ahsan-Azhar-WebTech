@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+let cookieParser = require("cookie-parser");
 let server = express();
 let Student = require("./models/Student");
 server.use(express.json());
+server.use(cookieParser());
 server.set("view engine", "ejs");
 
 let ejsLayouts = require("express-ejs-layouts");

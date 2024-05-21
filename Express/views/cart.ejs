@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="styles/cart.css">
+<div class="background">
+    <div class="cart">
+        <% for( let index = 0; index < products.length; index++ ) { %>
+            <div class="product">
+                <img class="prodImg" src="<%= products[index].img %>" alt="">
+                <div class="prodDetails">
+                    <h7><%= products[index].title %></h7>
+                    <p><%= products[index].price %></p>
+                    <a href="/rem<%= products[index].title %>">
+                        <button class="remove">remove</button>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

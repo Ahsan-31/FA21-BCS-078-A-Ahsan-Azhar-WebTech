@@ -49,12 +49,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 3px 3px 6px white;
+    box-shadow: 3px 3px 6px red;
     background-color: white;
     border-radius: 20px;
 }
 .showCaseProd:hover{
-    box-shadow: 4px 4px 12px white;
+    box-shadow: 4px 4px 12px red;
 }
 .showCaseProdImg {
     width: 100%;
