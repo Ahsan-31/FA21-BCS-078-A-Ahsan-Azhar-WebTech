@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="styles/contact-us.css">
+<section id="hero" class="min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <form id="form" class="mx-auto mt-5" action="/register" method="POST" style="max-width: 600px;">
+          <h1 class="text-center mb-4">Register</h1>
+          <div class="row g-3 mb-3">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First name" aria-label="First name" id="firstName" name="firstName" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control mb-3" id="email" placeholder="name@example.com" name="email" required>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+        </form>
+      </div>
+</section>

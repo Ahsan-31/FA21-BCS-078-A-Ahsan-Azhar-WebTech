@@ -1,10 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 let cookieParser = require("cookie-parser");
+let expressSession = require("express-session");
+const bodyParser = require('body-parser');
 let server = express();
 let Student = require("./models/Student");
+let User = require("./models/User");
 server.use(express.json());
 server.use(cookieParser());
+server.use(expressSession({ secret: "Secret" }));
+server.use(bodyParser.urlencoded({ extended: true }));
 server.set("view engine", "ejs");
 
 let ejsLayouts = require("express-ejs-layouts");
