@@ -10,6 +10,15 @@
                 <form action="/addToCart<%= product.id %>" method="post">
                     <input id="addToCart" type="submit" value="Add To Cart">
                 </form>
+                <% console.log(user.role) %>
+                <% if(user.role == "admin"){ %>
+                    <form action="/delProduct<%= product.id %>">
+                        <input id="delete" type="submit" value="delete">
+                    </form>
+                    <form action="/edit<%= product.id %>">
+                        <input id="edit" type="submit" value="edit">
+                    </form>
+                <% } %>
             </div>
         </div>
     </div>

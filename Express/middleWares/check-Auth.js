@@ -1,7 +1,7 @@
 module.exports = async function (req, res, next) {
-    if (true){
+    if (!req.session.user){
         console.log("You are not logged in");
-        res.redirect("/");
+        res.redirect("/login");
     }
     else next();
   };

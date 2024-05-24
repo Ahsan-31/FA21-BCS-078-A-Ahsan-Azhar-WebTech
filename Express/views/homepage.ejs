@@ -12,7 +12,9 @@
 </section>
 <h1 id="showCaseHeading">Popular Items:</h1>
 <div id = "showCase">
-  <% for( let index = 0; index < product.length; index++ ) { %>
+  <% let x=product.length %>
+  <% if(x > 4) x=4 %>
+  <% for( let index = 0; index < x; index++ ) { %>
     <a class="prodLink" href="/productDetails<%= product[index].id %>">
         <div class="showCaseProd">
             <img class="showCaseProdImg" src="<%= product[index].img %>" alt="">

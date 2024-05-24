@@ -7,11 +7,6 @@ let cookieParser = require("cookie-parser");
 
 router.get("/", async (req, res) => {
   let user = req.session.user;
-  if(!user)
-    console.log("No User");
-  else{
-    console.log(req.session.user.firstName);
-  }
   let product = await Product.find({popular:true});
     res.render("homepage",{
       product,
@@ -66,7 +61,7 @@ router.post('/register', (req, res) => {
   newUser.save()
     .then(user => {
       req.session.user = newUser;
-      res.send('User registered successfully!');
+      res.redirect("/");
     })
     .catch(err => {
       res.status(400).send('Error registering user');
@@ -86,17 +81,67 @@ router.get("/productsPage",async (req, res) => {
     user
   });
 });
+router.get("/productsPage:type",async (req, res) => {
+  let product = await Product.find({type:req.params.type});
+  let user = req.session.user;
+  res.render("productsPage",{
+    product,
+    user
+  });
+});
 
-router.get("/productDetails:id", async (req, res) => {
+router.get("/productDetails:id",authMiddleWare, async (req, res) => {
   let product = await Product.findById(req.params.id);
   let user = req.session.user;
+  console.log(user);
   res.render("productDetails",{
     product,
     user
   })
 });
 
-router.post ("/addToCart:id", async (req, res) => {
+router.get("/delProduct:id", async (req, res) => {
+  let product = await Product.findByIdAndDelete(req.params.id);
+  res.redirect("/productsPage");
+});
+router.get('/edit:id', async (req, res) => {
+  let user = req.session.user;
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).send('Product not found');
+    }
+    res.render('editProd', {
+      product,
+      user
+     });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+router.post('/edit:id', async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).send('Car not found');
+    }
+    product.title = req.body.title;
+    product.price = req.body.price;
+    product.img = req.body.img;
+    product.popular = req.body.popular;
+    product.type = req.body.type;
+    const updatedProduct = await product.save();
+
+    res.redirect('/productsPage');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+router.post ("/addToCart:id", authMiddleWare,async (req, res) => {
   let product = await Product.findById(req.params.id);
   let cart = req.cookies.cart;
   if(cart){
