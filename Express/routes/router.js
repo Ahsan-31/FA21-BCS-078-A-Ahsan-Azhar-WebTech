@@ -6,10 +6,26 @@ let authMiddleWare = require("../middleWares/check-Auth");
 let adminMiddleWare = require("../middleWares/check-admin");
 let cookieParser = require("cookie-parser");
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 router.get("/", async (req, res) => {
+  const message = req.query.message;
+  let displayMessage = '';
+
+  if (message === 'adminRequired') {
+    displayMessage = 'You need admin permissions to access this page.';
+  }
+
   let user = req.session.user;
   let product = await Product.find({popular:true});
+  shuffleArray(product)
+
     res.render("homepage",{
+      message: displayMessage,
       product,
       user
     });
@@ -27,12 +43,26 @@ router.get("/register", async (req, res) => {
 
 router.get("/logOut", async (req, res) => {
   req.session.user = null;
+  res.cookie('cart',[]);
   res.redirect("/");
 });
 
 router.get("/login", async (req, res) => {
+  const message = req.query.message;
+  let displayMessage = '';
+
+  if (message === 'loginRequired') {
+    displayMessage = 'You must be logged in to proceed.';
+  }
+  else if(message ==='incorrectCreds'){
+    displayMessage = 'incorrect email or password';
+  }
+
   let user = req.session.user;
-  res.render("logIn",{user});
+  res.render("logIn",{
+    message: displayMessage,
+    user
+  });
 });
 
 router.post("/login", async (req, res) => {
@@ -42,8 +72,8 @@ router.post("/login", async (req, res) => {
   }
   else{
     user = await User.findOne({ email: req.body.email });
-    if (!user) return res.redirect("/register");
-    if (user.password != req.body.password) return res.redirect("/login");
+    if (!user) return res.redirect(`/login?message=incorrectCreds`);
+    if (user.password != req.body.password) return res.redirect(`/login?message=incorrectCreds`);
     req.session.user = user;
     return res.redirect("/");
   }
@@ -74,21 +104,68 @@ router.get("/storyAPI", async (req, res) => {
   res.render("storyAPI",{user});
 });
 
-router.get("/productsPage",async (req, res) => {
-  let product = await Product.find();
-  let user = req.session.user;
-  res.render("productsPage",{
-    product,
-    user
-  });
+const fetchProducts = async (query, page, limit) => {
+  const productsCount = await Product.countDocuments(query);
+  const totalPages = Math.ceil(productsCount / limit);
+  const products = await Product.find(query)
+                                .sort({ type: 1, title: 1 })
+                                .skip((page - 1) * limit)
+                                .limit(limit);
+  return { products, totalPages };
+};
+
+router.get("/productsPage:type?", async (req, res) => {
+  let query = {};
+  if (req.params.type) {
+    query.type = req.params.type;
+  }
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 12;
+
+  try {
+    const { products, totalPages } = await fetchProducts(query, page, limit);
+
+    res.render("productsPage", {
+      product: products,
+      user: req.session.user,
+      currentPage: page,
+      totalPages: totalPages,
+      limit: limit,
+      searchKeyword: req.query.keyword || '',
+      typeFilter: req.params.type || ''
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
 });
-router.get("/productsPage:type",async (req, res) => {
-  let product = await Product.find({type:req.params.type});
-  let user = req.session.user;
-  res.render("productsPage",{
-    product,
-    user
-  });
+
+router.get("/search", async (req, res) => {
+  const searchKeyword = req.query.keyword;
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 12;
+
+  try {
+    const query = {
+      $or: [
+        { type: { $regex: new RegExp(searchKeyword, "i") } },
+        { title: { $regex: new RegExp(searchKeyword, "i") } }
+      ]
+    };
+    const { products, totalPages } = await fetchProducts(query, page, limit);
+
+    res.render("productsPage", {
+      product: products,
+      user: req.session.user,
+      currentPage: page,
+      totalPages: totalPages,
+      limit: limit,
+      searchKeyword: searchKeyword
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
 });
 
 router.get("/productDetails:id", async (req, res) => {
@@ -200,17 +277,14 @@ router.post ("/addToCart:id", authMiddleWare,async (req, res) => {
     }
   });
 
-router.get("/cart",async (req, res) => {
+router.get("/cart",authMiddleWare,async (req, res) => {
   let cart = req.cookies.cart;
   let user = req.session.user;
   if(!cart){
     cart = [];
   }
-  else{
-    products = cart;
-  }
   res.render("cart",{
-    products,
+    cart,
     user
   });
 });
