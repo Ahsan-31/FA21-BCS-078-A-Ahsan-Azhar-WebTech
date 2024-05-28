@@ -4,7 +4,6 @@ let cookieParser = require("cookie-parser");
 let expressSession = require("express-session");
 const bodyParser = require('body-parser');
 let server = express();
-let Student = require("./models/Student");
 let User = require("./models/User");
 server.use(express.json());
 server.use(cookieParser());
@@ -17,15 +16,8 @@ server.use(ejsLayouts);
 
 server.use(express.static("public"));
 
-let studentsAPIRouter = require("./routes/api/students");
-server.use(studentsAPIRouter);
 let mainRouter = require("./routes/router");
 server.use(mainRouter);
-
-// server.get("/", async (req, res) => {
-//   res.render("homepage");
-//   // res.send("Hello Class A section");
-// });
 
 mongoose
   .connect("mongodb://localhost:27017/products")

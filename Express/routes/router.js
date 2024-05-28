@@ -171,7 +171,6 @@ router.get("/search", async (req, res) => {
 router.get("/productDetails:id", async (req, res) => {
   let product = await Product.findById(req.params.id);
   let user = req.session.user;
-  console.log(user);
   res.render("productDetails",{
     product,
     user
@@ -268,7 +267,6 @@ router.post ("/addToCart:id", authMiddleWare,async (req, res) => {
       for(let i=0; i < cart.length ; i++){
         if(cart[i].title==req.params.product){
           cart.splice(i, 1);
-          console.log(cart);
           res.cookie('cart',cart);
           break;
         }

@@ -26,6 +26,7 @@ body{
     width: 100%;
 }
 .prodDetails{
+    margin-left: 20px;
     color: black;
 }
 .remove{
