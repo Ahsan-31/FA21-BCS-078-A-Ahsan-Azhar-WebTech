@@ -105,6 +105,32 @@ router.get("/delProduct:id",adminMiddleWare, async (req, res) => {
   let product = await Product.findByIdAndDelete(req.params.id);
   res.redirect("/productsPage");
 });
+
+router.get("/insert", async (req, res) => {
+  let user = req.session.user;
+  let product;
+  res.render("editProd",{
+    product,
+    user
+  });
+});
+router.post('/insert', async (req, res) => {
+  try {
+    const newProduct = new Product({
+      title: req.body.title,
+      price: req.body.price,
+      img: req.body.img,
+      popular: req.body.popular,
+      type: req.body.type,
+    });
+
+    await newProduct.save();
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
 router.get('/edit:id',adminMiddleWare, async (req, res) => {
   let user = req.session.user;
   try {

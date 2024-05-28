@@ -1,30 +1,29 @@
 <link rel="stylesheet" href="styles/contact-us.css">
 <section id="hero" class="min-vh-100 d-flex align-items-center">
     <div class="container">
-        <form id="form" class="mx-auto mt-5" action="/edit<%= product.id %>" method="POST" style="max-width: 600px;">
-            <h1 class="text-center mb-4">Edit Product</h1>
-            <div class="mb-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control mb-3" id="loginEmail" value="<%= product.title %>" name="title" required>
-            </div>
-            <div class="mb-3">
-              <label for="price" class="form-label">Price</label>
-              <input type="text" class="form-control" id="price" value="<%= product.price %>" name="price" required>
-            </div>
-            <div class="mb-3">
-                <label for="img" class="form-label">Image</label>
-                <input type="text" class="form-control" id="img" value="<%= product.img %>" name="img" required>
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">popular</label>
-                <input type="text" class="form-control" id="price" value="<%= product.popular %>" name="popular" required>
-            </div>
-            <div class="mb-3">
-                <label for="type" class="form-label">type</label>
-                <input type="text" class="form-control" id="type" value="<%= product.type %>" name="type" required>
-            </div>
-            <button type="submit" class="btn btn-primary" id="loginBtn">Update</button>
-          </form>
+      <form id="form" class="mx-auto mt-5" action="<%= product ? '/edit' + product.id : '/insert' %>" method="POST" style="max-width: 600px;">
+        <h1 class="text-center mb-4"><%= product ? 'Edit Product' : 'Insert Product' %></h1>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control mb-3" id="title" value="<%= product ? product.title : '' %>" name="title" required>
         </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" class="form-control" id="price" value="<%= product ? product.price : '' %>" name="price" required>
+        </div>
+        <div class="mb-3">
+          <label for="img" class="form-label">Image</label>
+          <input type="text" class="form-control" id="img" value="<%= product ? product.img : '' %>" name="img" required>
+        </div>
+        <div class="mb-3">
+          <label for="popular" class="form-label">Popular</label>
+          <input type="text" class="form-control" id="popular" value="<%= product ? product.popular : '' %>" name="popular" required>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <input type="text" class="form-control" id="type" value="<%= product ? product.type : '' %>" name="type" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn"><%= product ? 'Update' : 'Insert' %></button>
+      </form>      
     </div>
 </section>
