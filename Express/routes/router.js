@@ -3,6 +3,7 @@ let router = express.Router();
 let Product = require("../models/Product");
 let User = require("../models/User");
 let authMiddleWare = require("../middleWares/check-Auth");
+let adminMiddleWare = require("../middleWares/check-admin");
 let cookieParser = require("cookie-parser");
 
 router.get("/", async (req, res) => {
@@ -90,7 +91,7 @@ router.get("/productsPage:type",async (req, res) => {
   });
 });
 
-router.get("/productDetails:id",authMiddleWare, async (req, res) => {
+router.get("/productDetails:id", async (req, res) => {
   let product = await Product.findById(req.params.id);
   let user = req.session.user;
   console.log(user);
@@ -100,11 +101,11 @@ router.get("/productDetails:id",authMiddleWare, async (req, res) => {
   })
 });
 
-router.get("/delProduct:id", async (req, res) => {
+router.get("/delProduct:id",adminMiddleWare, async (req, res) => {
   let product = await Product.findByIdAndDelete(req.params.id);
   res.redirect("/productsPage");
 });
-router.get('/edit:id', async (req, res) => {
+router.get('/edit:id',adminMiddleWare, async (req, res) => {
   let user = req.session.user;
   try {
     const product = await Product.findById(req.params.id);
@@ -121,7 +122,7 @@ router.get('/edit:id', async (req, res) => {
   }
 });
 
-router.post('/edit:id', async (req, res) => {
+router.post('/edit:id',adminMiddleWare, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
     if (!product) {
