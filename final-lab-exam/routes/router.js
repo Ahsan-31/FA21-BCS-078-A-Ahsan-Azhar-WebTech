@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
   }
 
   let user = req.session.user;
+  //popular is placeholder for Featured
   let product = await Product.find({popular:true});
   shuffleArray(product)
 
