@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="styles/cart.css">
+<div class="background">
+    <div class="cart">
+        <h2 class="visitedHeading">Visited Products</h2>
+        <% if(visitedProducts.length == 0){ %>
+            <div class="emptyCart">
+                <h4>No Products Visited</h4>
+                <a href="/productsPage">Shop Now >></a>
+            </div>
+            <% } %>
+        <% for( let index = 0; index < visitedProducts.length; index++ ) { %>
+            <div class="product">
+                <img class="prodImg" src="<%= visitedProducts[index].img %>" alt="">
+                <div class="prodDetails">
+                    <h7><%= visitedProducts[index].title %></h7>
+                    <p><%= visitedProducts[index].price %></p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

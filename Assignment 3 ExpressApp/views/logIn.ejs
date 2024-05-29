@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="styles/contact-us.css">
+<section id="hero" class="min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <form id="form" class="mx-auto mt-5" action="/login" method="POST" style="max-width: 600px;">
+      <h1 class="text-center mb-4">Login</h1>
+      <% if (message) { %>
+        <div class="alert alert-warning" role="alert">
+          <%= message %>
+        </div>
+      <% } %>
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control mb-3" id="loginEmail" placeholder="name@example.com" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="loginPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">Login</button>
+    </form>
+  </div>
+</section>

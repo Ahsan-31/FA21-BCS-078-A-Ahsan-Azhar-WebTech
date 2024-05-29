@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="styles/productsPage.css">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col products">
+      <% if (product.length > 0) { %>
+        <% for (let index = 0; index < product.length; index++) { %>
+          <a class="prodLink" href="/productDetails<%= product[index].id %>">
+            <div class="product">
+              <img class="productImg" src="<%= product[index].img %>" alt="">
+              <h5 class="productTitle"><%= product[index].title %></h5>
+              <p class="productPrice"><%= product[index].price %></p>
+            </div>
+          </a>
+        <% } %>
+      <% } else { %>
+        <p>No products found.</p>
+      <% } %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <div class="pagination">
+        <% if (currentPage > 1) { %>
+          <a href="?page=<%= currentPage - 1 %>&limit=<%= limit %>" class="btn btn-pagination">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        <% } %>
+        <% for (let i = 1; i <= totalPages; i++) { %>
+          <a href="?page=<%= i %>&limit=<%= limit %>" class="btn btn-pagination <%= currentPage === i ? 'active' : '' %>">
+            <%= i %>
+          </a>
+        <% } %>
+        <% if (currentPage < totalPages) { %>
+          <a href="?page=<%= currentPage + 1 %>&limit=<%= limit %>" class="btn btn-pagination">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        <% } %>
+        <% if(user) { %>
+          <% if(user.role == "admin") { %>
+            <a href="/insert">
+              <button class="insertProd">Insert Product</button>
+            </a>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

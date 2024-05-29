@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="styles/cart.css">
+<div class="background">
+    <div class="cart">
+        <% if(cart.length == 0){ %>
+            <div class="emptyCart">
+                <h4>No Products in cart</h4>
+                <a href="/productsPage">Shop Now >></a>
+            </div>
+            <% } %>
+        <% for( let index = 0; index < cart.length; index++ ) { %>
+            <div class="product">
+                <img class="prodImg" src="<%= cart[index].img %>" alt="">
+                <div class="prodDetails">
+                    <h7><%= cart[index].title %></h7>
+                    <p><%= cart[index].price %></p>
+                    <a href="/rem<%= cart[index].title %>">
+                        <button class="remove">remove</button>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

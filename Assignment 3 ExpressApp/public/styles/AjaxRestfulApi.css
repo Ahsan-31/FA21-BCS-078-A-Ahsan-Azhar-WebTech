@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.action-buttons{
+    width: 70px;
+    height: 35px;
+    margin-bottom: 2%;
+}
+
+.form-control{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+}
+
+.form-control::placeholder{
+    color: white
+}
+.form-control:focus{
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+}
+
+.form-section{
+    margin: 2% 0 1% 0;
+}

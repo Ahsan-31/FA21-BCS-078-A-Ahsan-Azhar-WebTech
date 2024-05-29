@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+#nav-bar{
+    background: linear-gradient(to right,rgb(84, 25, 43),rgb(14, 32, 78));
+    color: white;
+}
+
+#nav-logo{
+    width:25%;
+}
+
+#cart-icon{
+    width:20%;
+    margin-left: 60%;
+}
+#cart-icon:hover{
+    transform: scale(1.2);
+}
+
+#navbarNav{
+    align-items: center;
+    text-align: center;
+}
+.nav-logo-a{
+    margin-left: 2%;
+    max-width: 34%;
+}
+#hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.650)) ,url(../labTask\ 1\ LandingPage/images/1200x675.jpg);
+    color:white;
+    background-position: center;
+    background-size: cover;
+}
+
+#form{
+    align-items: center;
+    color: grey;
+    width: 50%;
+}

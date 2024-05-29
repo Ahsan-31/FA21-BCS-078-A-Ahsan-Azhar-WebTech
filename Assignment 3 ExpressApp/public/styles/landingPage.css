@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+.landing-button{
+    color:white;
+    height:45px;
+    width:15%;
+    text-shadow: 2px 2px 5px grey;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px grey;
+    border: 2px solid rgb(35, 35, 35);
+    margin: 1%;
+    transition: all 0.1s ease-in;
+}
+.landing-button:hover{
+    transform: scale(1.1);
+    background-color: black;
+}
+.prodLink{
+    text-decoration: none;
+}
+#showCaseHeading{
+    color: grey;
+    padding-top: 2%;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 0;
+}
+#showCase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3%;
+    gap: 10px;
+    background-color: rgb(0, 0, 0);
+    align-items:center;
+    padding-bottom: 3%;
+}
+
+.showCaseProd {
+    width: 300px;
+    height: 320px;
+    border: 2px solid black;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 3%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 6px red;
+    background-color: white;
+    border-radius: 20px;
+}
+.showCaseProd:hover{
+    box-shadow: 4px 4px 12px red;
+}
+.showCaseProdImg {
+    width: 100%;
+    max-height: 200px;
+    transition: all 0.15s ease-in;
+}
+.showCaseProdImg:hover{
+    transform: scale(1.1);
+}
+.showCaseProdTitle {
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.showCaseProdPrice {
+    color: rgb(255, 78, 78);
+    text-align: center;
+}
+#viewMore{
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+    text-align: center;
+    background-color: black;
+}
+#viewMore:hover{
+    color: rgb(180, 180, 180);
+}

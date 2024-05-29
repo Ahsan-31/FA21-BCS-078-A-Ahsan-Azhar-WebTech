@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="styles/landingPage.css">
+<section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+    <div class="container">
+      <% if (message) { %>
+        <div class="alert alert-warning" role="alert">
+          <%= message %>
+        </div>
+      <% } %>
+      <h1>Welcome to A.A Computers</h1>
+      <h3>Your ultimate destination for gaming hardware excellence!</h3>
+      <br>
+      <div>
+        <a href="/productsPage"><button class="landing-button">Browse Products</button></a>
+        <a href="#search"><button class="landing-button">Search</button></a>
+      </div>
+    </div>
+</section>
+<h1 id="showCaseHeading">Popular Items:</h1>
+<div id = "showCase">
+  <% let x=product.length %>
+  <% if(x > 4) x=4 %>
+  <% for( let index = 0; index < x; index++ ) { %>
+    <a class="prodLink" href="/productDetails<%= product[index].id %>">
+        <div class="showCaseProd">
+            <img class="showCaseProdImg" src="<%= product[index].img %>" alt="">
+            <h5 class="showCaseProdTitle"><%=product[index].title %></h5>
+            <p class="showCaseProdPrice"><%=product[index].price %></p>
+        </div>
+    </a>
+  <% } %>
+  <a id="viewMore" href="/productsPage"><h4>View More ></h4></a></div>
+</div>

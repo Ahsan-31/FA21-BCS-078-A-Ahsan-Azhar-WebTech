@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+#nav-bar{
+    background: linear-gradient(to right,rgb(84, 25, 43),rgb(14, 32, 78));
+    color: white;
+}
+
+#nav-logo{
+    width:25%;
+}
+
+#cart-icon{
+    width:20%;
+    margin-left: 60%;
+}
+#cart-icon:hover{
+    transform: scale(1.2);
+}
+
+#navbarNav{
+    align-items: center;
+    text-align: center;
+}
+.nav-logo-a{
+    margin-left: 2%;
+    max-width: 34%;
+    margin-right: -5%;
+}
+
+#hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.507),rgba(0, 0, 0, 0.438)) ,url(../images/1200x675.jpg);
+    color:white;
+    background-position: center;
+    background-size: cover;
+}
+
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+#footerLogo{
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.footer-section p, .footer-section a, .footer-section li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+.footer-section a {
+    color: rgb(255, 78, 78);
+    text-decoration: none;
+}
+.footer-section a:hover {
+    text-decoration: underline;
+}
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-bottom {
+    background: #222;
+    color: #bbb;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}

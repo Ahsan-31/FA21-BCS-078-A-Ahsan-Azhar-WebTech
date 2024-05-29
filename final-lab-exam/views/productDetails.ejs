@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="styles/productDetails.css">
+<div class="background">
+    <div class="product">
+        <img class="prodImg" src="<%= product.img %>" alt="">
+        <div class="prodDetails">
+            <h3><%= product.title %></h3>
+            <h5><%= product.price %></h5>
+            <div class="purchaseButtons">
+                <button id="buyNow">Buy Now</button>
+                <form action="/addToCart<%= product.id %>" method="post">
+                    <input id="addToCart" type="submit" value="Add To Cart">
+                </form>
+                <% if(user) { %>
+                    <% if(user.role == "admin"){ %>
+                        <div id="adminControls">
+                            <form action="/edit<%= product.id %>">
+                                <input id="edit" type="submit" value="edit">
+                            </form>
+                            <form action="/delProduct<%= product.id %>">
+                                <input id="delete" type="submit" value="delete">
+                            </form>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
