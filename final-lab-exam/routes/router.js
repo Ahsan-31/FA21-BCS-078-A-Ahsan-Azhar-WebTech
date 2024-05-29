@@ -174,7 +174,8 @@ router.get("/productDetails:id", async (req, res) => {
   let user = req.session.user;
   if(user){
     if(req.session.visitedProducts){
-      req.session.visitedProducts.push(product);
+      if(!req.session.visitedProducts.includes(product))
+        req.session.visitedProducts.push(product);
     }
     else{
       let visitedProducts = [];
