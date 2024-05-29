@@ -286,4 +286,8 @@ router.get("/cart",authMiddleWare,async (req, res) => {
     user
   });
 });
+
+router.all('*', (req, res) => {
+  res.send("404 page doesnt exist");
+});
 module.exports = router;
